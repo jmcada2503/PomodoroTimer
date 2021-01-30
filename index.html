@@ -1,0 +1,90 @@
+<style>
+    @keyframes drops {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .animatedDrops {
+        animation-name: drops;
+        animation-duration: 1000ms;
+        animation-iteration-count: infinite;
+    }
+    .button:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    .littleBox {
+        position: fixed;
+        width: 1px;
+        height: 1px;
+        background-color: black;
+    }
+    .leaf {
+        position: fixed;
+        width: 20px;
+        height: 10px;
+        opacity: 0;
+    }
+    .button {
+        position: absolute;
+        opacity: 0.8;
+        width: 80px;
+        height: 80px;
+    }
+    .counter {
+        position: fixed;
+        width: 100%;
+        left: 0px;
+        text-align: center;
+        margin: 0px;
+        font-size: 100px;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 300;
+    }
+
+    #buttonCont {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: 38% auto 0px auto;
+        padding: 0px;
+    }
+</style>
+
+<html style="background: linear-gradient(to bottom right, #ff9933 0%, #ff0066 80%);">
+
+<header>
+
+    <script src="functions.js"></script>
+
+</header>
+
+<div id="circulo">
+
+    <div class="littleBox" style="left: 50%; top: 35%; visibility: hidden;" id="centerPoint"></div>
+
+</div>
+
+<!-- Contador -->
+<p class="counter">25:00</p>
+
+<script>positionCounter()</script>
+
+<!-- Botones -->
+<div id="buttonCont">
+    <img src="img/PlayButton.png" class="button" style="left: 0px;" id="playButton" onclick="play()">
+</div>
+
+<audio src="audio/zapsplat_multimedia_alert_warm_piano_pads_001_39465.mp3" id="audio"></audio>
+
+<script>start()</script>
+
+</html>
